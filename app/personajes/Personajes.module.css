@@ -1,0 +1,45 @@
+.personajes_body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 100%;
+  margin: 40px auto auto auto;
+}
+
+.personajes_body .personajes_top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.personajes_body .personajes_top .progreso {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  width: 510px;
+  height: 192.35px;
+  background: #0e0f0f;
+  border: 0.7px solid #42331a;
+  border-radius: 5px;
+}
+
+.personajes_body .personajes_top .video {
+  box-sizing: border-box;
+  width: 382px;
+  height: 192.35px;
+  background: #0e0f0f;
+  border: 0.7px solid #42331a;
+  border-radius: 5px;
+  color: white;
+}
+
+.personajes_body .personajes_top .image {
+  box-sizing: border-box;
+  width: 382px;
+  color: white;
+  height: 192.35px;
+  background: #0e0f0f;
+  border: 0.7px solid #42331a;
+  border-radius: 5px;
+}
