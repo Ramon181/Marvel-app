@@ -3,6 +3,7 @@
 .pagination_container {
   display: flex;
   align-items: center;
+  margin: 30px;
 }
 
 .arrow_text {
@@ -17,15 +18,22 @@
     margin: 0 var(--margin);
     border-radius: 6px;
     background: #202020;
+    color: rgb(179, 179, 179);
     max-width: auto;
-    min-width: var(--size);
-    height: var(--size);
+    width: 40px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     padding: 0 6px;
   }
+
+  .pagination_number:hover{
+    width: 50px;
+    height: 50px;
+  }
+  
 
 
   @media (hover: hover) {

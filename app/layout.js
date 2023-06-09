@@ -1,6 +1,6 @@
 import "./globals.css";
 import { Inter } from "next/font/google";
-import { Navigation } from "./components/Navigation.jsx";
+import { Navigation } from "./components/Navigation/Navigation.jsx";
 
 const inter = Inter({ subsets: ["latin"] });
 

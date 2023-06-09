@@ -7,6 +7,8 @@
   width: 100%;
   max-width: 270px;
   background-color: #1b2028;
+  opacity: .9;
+  transition: .5s ease;
   border-radius: 16px;
   position: relative;
   border: 3px solid transparent;
@@ -14,6 +16,7 @@
   text-align: center;
   color: #f1f3f3;
   border: 0.75px solid #3c3c41;
+  cursor: pointer;
   background-image: linear-gradient(
     135deg,
     rgba(173, 173, 173, 0.35),
@@ -24,6 +27,10 @@
   box-shadow: -3px 6px 21px 0px rgba(0,0,0,0.75);
 -webkit-box-shadow: -3px 6px 21px 0px rgba(0,0,0,0.75);
 -moz-box-shadow: -3px 6px 21px 0px rgba(0,0,0,0.75);
+}
+
+.carta_body:hover{
+  opacity: 1;
 }
 
 .carta_body .item_image {
