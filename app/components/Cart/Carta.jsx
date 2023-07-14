@@ -1,8 +1,24 @@
+"use client";
+import { useState } from "react";
 import style from "./Carta.module.css";
 
-export const Carta = ({ img, comics, name, series }) => {
+export const Carta = ({
+  img,
+  comics,
+  name,
+  series,
+  id,
+  setCharacterId,
+  setDescription,
+}) => {
   return (
-    <div className={style.carta_body}>
+    <button
+      onClick={() => {
+        setDescription(true);
+        setCharacterId(id);
+      }}
+      className={style.carta_body}
+    >
       <h2 className={style.item_name}>{name}</h2>
       <div className={style.item_image}>
         <img src={img} alt="" />
@@ -15,6 +31,6 @@ export const Carta = ({ img, comics, name, series }) => {
           <h2>Series: {series}</h2>
         </div>
       </div>
-    </div>
+    </button>
   );
 };

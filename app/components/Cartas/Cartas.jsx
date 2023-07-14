@@ -5,20 +5,12 @@ import { Carta } from "../Cart/Carta";
 import style from "./Cartas.module.css";
 import { useEffect, useState } from "react";
 import { Pagination } from "../Pagination/Pagination";
+import Personaje from "../Personaje/Personaje";
 
-const allPersonajes = () => {
-  const res = axios.get(
-    "https://gateway.marvel.com/v1/public/characters?limit=20&ts=1&apikey=957a572378f86fab746778984884581f&hash=24c043ba4094f21173bc246ee7f8b067"
-  );
-
-  return res;
-};
-
-// 24c043ba4094f21173bc246ee7f8b067
-
-export const Cartas =  () => {
-
-  const [personajes, setPersonajes] = useState([])
+export const Cartas = () => {
+  const [personajes, setPersonajes] = useState([]);
+  const [description, setDescription] = useState(false);
+  const [characterId, setCharacterId] = useState(0)
 
   const [currentPage, setCurrentPage] = useState(1); // Setea la Pagina Actual
   const itemsPerPage = 4;
@@ -27,13 +19,13 @@ export const Cartas =  () => {
     const res = await axios.get(
       "https://gateway.marvel.com/v1/public/characters?limit=20&ts=1&apikey=957a572378f86fab746778984884581f&hash=24c043ba4094f21173bc246ee7f8b067"
     );
-  
-    setPersonajes(res.data.data.results)
+
+    setPersonajes(res.data.data.results);
   };
-  
-  useEffect(()=>{
-    allPersonajes()
-  },[])
+
+  useEffect(() => {
+    allPersonajes();
+  }, []);
 
   function handlePageChange(pageNumber) {
     setCurrentPage(pageNumber);
@@ -50,17 +42,18 @@ export const Cartas =  () => {
       <div className={style.cartas_body}>
         {itemsToShow.map(personaje => (
           <Carta
+            key={personaje.id}
+            id={personaje.id}
             name={personaje.name}
             img={personaje.thumbnail.path + "." + personaje.thumbnail.extension}
             comics={personaje.comics.available}
             series={personaje.series.available}
+            setCharacterId={setCharacterId}
+            setDescription={setDescription}
           />
         ))}
       </div>
-      {/* <div>
-        
-        
-      </div> */}
+      {description === true ? <Personaje characterId={characterId} setDescription={setDescription} /> : null}
       <Pagination
         itemsPerPage={itemsPerPage}
         numeroPaginas={numeroPaginas}
