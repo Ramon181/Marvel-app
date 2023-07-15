@@ -81,9 +81,7 @@ body {
   overflow-x: hidden;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-}
+body{background-image:url(https://d39uo3k0liehyo.cloudfront.net/roadmap-v2/images/bg-pattern.png);background-repeat:repeat;background-attachment:fixed;background-size:15px}
 
 a {
   color: inherit;
